@@ -1,25 +1,21 @@
+#include<atomic>
 #include<iostream>
 #include<vector>
 #include<thread>
-#include<mutex>
 
 using namespace std;
 
-int accum = 0;
-
-mutex accum_mutex;
+atomic<int> accum(0);
 
 void square(int x)
 {
-	int temp = x * x;
-	accum_mutex.lock();
-	accum = accum + temp;
-	accum_mutex.unlock();
+	accum = accum + x * x;
 }
 
 int main()
 {
 	vector<thread> ths;
+
 	for(int i = 1; i <= 20; i++)
 	{
 		ths.push_back(thread(&square, i));
@@ -30,6 +26,6 @@ int main()
 		th.join();
 	}
 
-	cout << "accum = " << accum << endl;
+	cout << "accum = " <<  accum << endl;
 	return 0;
 }
