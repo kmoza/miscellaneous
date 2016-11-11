@@ -1,0 +1,1 @@
+linux uses deferred memory allocation
