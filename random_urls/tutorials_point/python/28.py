@@ -8,6 +8,9 @@ class Employee:
         self.salary = salary
         Employee.empCount += 1
 
+    def __del__(self):
+        class_name = self.__class__.__name__
+        print class_name, 'destroyed'
 
     def displayCount(self):
         print 'Total emplooyee %d' %Employee.empCount
