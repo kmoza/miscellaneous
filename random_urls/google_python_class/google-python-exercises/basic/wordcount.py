@@ -36,7 +36,6 @@ Optional: define a helper function to avoid code duplication inside
 print_words() and print_top().
 
 """
-
 import sys
 
 # +++your code here+++
@@ -45,7 +44,32 @@ import sys
 # and builds and returns a word/count dict for it.
 # Then print_words() and print_top() can just call the utility function.
 
+def build_word_count_dict(filename):
+  word_count = {}
+  with open(filename, 'r') as my_file:
+    for line in my_file:
+      for word in line.split():
+        if not word.lower() in word_count.keys():
+          word_count[word.lower()] = 1
+        else:
+          word_count[word.lower()] = word_count[word.lower()] + 1
+  return word_count
+
+def print_words(filename):
+  word_count = build_word_count_dict(filename)
+  word_count_words = sorted(word_count)
+  for word in word_count_words:
+    print word, word_count[word]
 ###
+
+def sort_by_value(item):
+  return item[-1]
+
+def print_top(filename):
+  word_count = build_word_count_dict(filename)
+  word_count_words = sorted(word_count.items(), key=sort_by_value, reverse=True)
+  for item in word_count_words[:20]:
+    print item[0], str(item[1])
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
