@@ -4,10 +4,10 @@
 
 int main()
 {
-	std::cout << "Test" << std::endl;
+    std::cout << "Test" << std::endl;
 
-	operator<<(std::cout, "Hello, This is Arg Dependent Lookup\n");
+    operator<<(std::cout, "Hello, This is Arg Dependent Lookup\n");
 
-	endl(std::cout);
+    endl(std::cout);
 
 }

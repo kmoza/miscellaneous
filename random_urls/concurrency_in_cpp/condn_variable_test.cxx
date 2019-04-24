@@ -13,16 +13,16 @@ mutex m;
 
 int main()
 {
-	int value = 100;
-	bool notified = false;
-	thread reporter([&](){
-			cout << "The value is " << value << endl;
-			});
+    int value = 100;
+    bool notified = false;
+    thread reporter([&](){
+            cout << "The value is " << value << endl;
+            });
 
-	thread assigner([&](){
-			});
+    thread assigner([&](){
+            });
 
-	reporter.join();
-	assigner.join();
-	return 0;
+    reporter.join();
+    assigner.join();
+    return 0;
 }

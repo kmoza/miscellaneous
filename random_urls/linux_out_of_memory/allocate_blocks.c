@@ -5,18 +5,18 @@
 
 int main()
 {
-	void *myblock = NULL;
-	int count = 0;
+    void *myblock = NULL;
+    int count = 0;
 
-	while(1)
-	{
-		myblock = (void*) malloc(MEGABYTE);
-		if(!myblock)
-		{
-			break;
-		}
-		printf("Currently allocating %d MB\n", ++count);
-	}
+    while(1)
+    {
+        myblock = (void*) malloc(MEGABYTE);
+        if(!myblock)
+        {
+            break;
+        }
+        printf("Currently allocating %d MB\n", ++count);
+    }
 
-	exit(0);
+    exit(0);
 }

@@ -3,12 +3,12 @@
 
 int main()
 {
-	int *array = malloc(10*sizeof(int));
+    int *array = malloc(10*sizeof(int));
 
-	if(NULL == array)
-	{
-		fprintf(stderr,"malloc failed\n");
-		return -1;
-	}
-	return 0;
+    if(NULL == array)
+    {
+        fprintf(stderr,"malloc failed\n");
+        return -1;
+    }
+    return 0;
 }

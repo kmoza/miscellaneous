@@ -3,36 +3,36 @@
 class A
 {
 private:
-	int i;
+    int i;
 public:
-	A(int x=0)
-	{
-		std::cout << "Initialzied A\n";
-	}
+    A(int x=0)
+    {
+        std::cout << "Initialzied A\n";
+    }
 };
 
 class B
 {
 private:
-	int j;
+    int j;
 public:
-	B(int b=0)
-	{
-		std::cout << "Initialzied B\n";
-	}
+    B(int b=0)
+    {
+        std::cout << "Initialzied B\n";
+    }
 };
 
 class Main
 {
 private:
-	A a;
-	B b;
+    A a;
+    B b;
 public:
-	Main(int x=10, int y=20):(a(10),b(20))
+    Main(int x=10, int y=20):(a(10),b(20))
     {
-	std::cout << "Initialized main\n";
+    std::cout << "Initialized main\n";
     }
-	
+    
 };
 
 int main()

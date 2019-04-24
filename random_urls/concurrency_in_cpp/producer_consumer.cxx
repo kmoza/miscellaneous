@@ -9,33 +9,33 @@ using namespace std;
 
 int main()
 {
-	int c = 0;
-	bool done = false;
-	queue<int> goods;
+    int c = 0;
+    bool done = false;
+    queue<int> goods;
 
-	thread producer([&](){
-			for(int i = 0; i < 500; i++)
-			{
-				goods.push(i);
-				c++;
-			}
+    thread producer([&](){
+            for(int i = 0; i < 500; i++)
+            {
+                goods.push(i);
+                c++;
+            }
 
-			done = true;
-			});
+            done = true;
+            });
 
-	thread consumer([&](){
-			while(!done)
-			{
-				while(!goods.empty())
-				{
-					goods.pop();
-					c--;
-				}
-			}
+    thread consumer([&](){
+            while(!done)
+            {
+                while(!goods.empty())
+                {
+                    goods.pop();
+                    c--;
+                }
+            }
 
-			});
+            });
 
-	producer.join();
-	consumer.join();
-	cout << "Net : " << c << endl;
+    producer.join();
+    consumer.join();
+    cout << "Net : " << c << endl;
 }

@@ -11,5 +11,5 @@ struct Derived : Base
 //just check that compiler generates an error
 int main()
 {
-	return 0;
+    return 0;
 }

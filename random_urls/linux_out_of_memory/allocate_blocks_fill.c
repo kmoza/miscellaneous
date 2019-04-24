@@ -6,22 +6,22 @@
 
 int main()
 {
-	void *myblock = NULL;
+    void *myblock = NULL;
 
-	int count = 0;
+    int count = 0;
 
-	while(1)
-	{
-		myblock = (void*)malloc(MEGABYTE);
-		if(!myblock)
-		{
-			break;
-		}
+    while(1)
+    {
+        myblock = (void*)malloc(MEGABYTE);
+        if(!myblock)
+        {
+            break;
+        }
 
-		memset(myblock,1,MEGABYTE);
-		printf("Currently allocateing %d MB \n",++count);
+        memset(myblock,1,MEGABYTE);
+        printf("Currently allocateing %d MB \n",++count);
 
-	}
+    }
 
-	exit(0);
+    exit(0);
 }
