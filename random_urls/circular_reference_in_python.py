@@ -1,7 +1,9 @@
+import weakref
+
 class FooType(object):
 	def __init__(self, id, parent):
 		self.id = id
-		self.parent = parent
+		self.parent = weakref.ref(parent)
 		print("Foo {} born".format(self.id))
 
 	def __del__(self):
