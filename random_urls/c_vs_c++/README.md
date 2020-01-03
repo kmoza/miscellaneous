@@ -1,0 +1,1 @@
+https://unthought.net/c++/c_vs_c++.html
