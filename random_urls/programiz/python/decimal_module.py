@@ -1,0 +1,4 @@
+import decimal
+
+print(0.1)
+print(decimal.Decimal(0.1))
